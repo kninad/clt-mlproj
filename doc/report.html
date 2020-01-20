@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<!-- CUSTOM CSS FILE-->
+<link rel="stylesheet" href="/home/ninad/.pandoc/pandoc.css" type="text/css" />
+  <title>report</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+  <style>
+  /* Custom CSS file for use with pandoc */
+  
+  body {      
+        width:52%;
+        margin:0 auto;
+        padding: 0px;
+        background-color: #FEFEFE;
+        font-size:16px;
+        font-family: "DejaVu Sans", Arial, sans-serif;
+        color: #111;
+        line-height:1.4; }
+  
+  hr {
+      display: block;
+      position: relative;
+      padding: 0;
+      margin: 8px auto;
+      height: 0;
+      width:100%;
+      max-height: 0;
+      font-size: 1px;
+      line-height: 0;
+      clear: both;
+      border: none;
+      border-top: 1px solid #cccccc; }
+        
+  h1,h2,h3,h4,h5,h6 {
+      font-family: Georgia, Palatino, 'Times New Roman', times, serif;
+      line-height: 1.2;
+      margin-top: 1.5em;
+      font-weight: bold;
+      color: #555; }
+        
+  h1 {  font-size: 1.8em; }
+  h2 {  font-size: 1.6em; }
+  h3 {  font-size: 1.4em; }
+  h4 {  font-size: 1.2em; }
+  h5 {  font-size: 1.0em; }
+  h6 {  font-size: 0.8em; }
+  
+  small, sub, sup {  font-size: 75%; }
+  
+  
+  a {	text-decoration: none;
+      color:#255db8; }
+  a:hover {	text-decoration: underline; }
+  a:visited {	color:#255db8; }
+  
+  ul {  padding-left: 1.4em; }
+  li {  margin-bottom: 0.4em; }
+  
+  
+  figcaption {    display:none; }
+  
+  figure { 
+      display: block; 
+      margin:0;
+      page-break-inside:avoid; }
+  
+  img { 
+      height:200px;
+      margin-right: 20px;
+      padding-left: 0.2em; }
+  
+  
+  blockquote {  
+    color: #666666;
+    font-style: italic;
+    margin-left: 1.5em;
+    padding-left: 1em;
+    border-left: 3px solid #2c8898; }
+  
+  /* Pre and Code */
+  pre {
+      background-color: #FAFAFA;
+      display: block;
+      padding: 1em;
+      overflow-x: auto; }
+  
+  code {
+      background-color: #FAFAFA;
+      font-size: 0.95em;
+      font-family: monospace, serif;
+      padding: 0 0.5em;
+      white-space: pre-wrap; }
+  
+  pre > code {
+      padding: 0;
+      background-color: transparent;
+      white-space: pre; }
+  
+  
+  /* Tables */
+  table {
+    text-align: justify;
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 10px;}
+    
+  
+  td, th {
+    padding: 0.5em;
+    border-bottom: 1px solid #f1f1f1; }
+  
+  #TOC {
+      font-size: 10pt;
+      position: fixed;
+      right: 0em;
+      top: 0em;
+      padding-right: 1.2em;
+      background: #fefefe;
+      line-height: 12pt;
+      text-align: right;
+      box-shadow: 0 0 1em #777777;
+      -webkit-box-shadow: 0 0 1em #777777;
+      -moz-box-shadow: 0 0 1em #777777;
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      /* ensure doesn't flow off the screen when expanded */
+      max-height: 80%;
+      overflow: auto; }
+      
+      
+      
+  @media only screen and (min-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      filter: none !important;
+      -ms-filter: none !important;
+    }
+  
+    body {
+      font-size: 12pt;
+      max-width: 100%;
+    }
+  
+    a, a:visited {
+      text-decoration: underline;
+    }
+  
+    hr {
+      height: 1px;
+      border: 0;
+      border-bottom: 1px solid black;
+    }
+  
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+  
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+      content: "";
+    }
+  
+    pre, blockquote {
+      border: 1px solid #999;
+      padding-right: 1em;
+      page-break-inside: avoid;
+    }
+  
+    tr, img {
+      page-break-inside: avoid;
+    }
+  
+    img {
+      max-width: 100% !important;
+    }
+  
+    @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+  }
+  
+    @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+  }
+  
+    p, h2, h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2, h3 {
+      page-break-after: avoid;
+    }
+  }
+  
+  </style>
+</head>
+<body>
+<h1 id="scaling-the-learning-of-chow-liu-trees-in-cutset-networks">Scaling the learning of Chow Liu trees in Cutset Networks</h1>
+<p>Ninad Arun Khargonkar</p>
+<h2 id="introduction">Introduction</h2>
+<p>Tractable probabilistic models are a class of probabilistic models which offer polynomial time exact inference over many different model queries. Such models have been the focus of recent research in probabilistic modeling for example, the sum product network [4] and the cut-set network [2]. We base our project on scaling the learning process of cutset networks. Cuset networks are basically OR trees with a tree Bayesian network (Chow-Liu tree) at their leaves which enables fast linear time inference . The Chow-Liu algorithm [1] is used to learn the tree Bayesian network from the training data, hence the name “Chow Liu tree” which we will in this document to refer to tree bayesian network learned using the Chow Liu algorithm.</p>
+<p>Although tractable structure-learning is an attractive property of tree networks, learning a Chow-Liu tree is quadratic in the number of feature variables and this cost can be prohibitive in scaling the learning process of cutset networks to larger and higher dimensional data sets . We introduce approximations to this method with sub-quadratic cost in data and number of features by imposing a structure to tree through the calculation of a spanning tree. Scaling this algorithm is an important problem since its a part of a larger learning routine in cutset networks, therefore it can also prove to be a bottleneck in other variants of cutset networks [6, 7].</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Learning a cutset network from data <span class="math inline"><em>d</em></span> involves two parts: a global OR tree and Chow Liu trees at leaves. The OR tree is learned using the information gain greedy heuristic which selects the variable having maximum information gain. This puts the running time for OR tree as <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup><em>d</em>)</span>. The Chow Liu algorithm learns a tree network <span class="math inline"><em>T</em>(<em>x</em>)</span> from the training data in order to match the true probability distribution <span class="math inline"><em>P</em></span> over a set <span class="math inline"><em>V</em></span> of variables with <span class="math inline">|<em>V</em>| = <em>n</em></span>. The probability for any vector <span class="math inline"><em>x</em></span> is then as follows:</p>
+<p><br /><span class="math display"><em>T</em>(<em>x</em>) = ∏<sub><em>v</em> ∈ <em>V</em></sub><em>T</em>(<em>x</em><sub><em>v</em></sub> | <em>x</em><sub><em>p</em><em>a</em>(<em>v</em>)</sub>)</span><br /></p>
+<p>A “good” tree structure <span class="math inline"><em>T</em></span> will be close to the true underlying data distribution <span class="math inline"><em>P</em></span> and the key observation of the Chow-Liu algorithm was that the Kullback-Leibler divergence between <span class="math inline"><em>P</em>(<em>x</em>)</span> and <span class="math inline"><em>T</em>(<em>x</em>)</span> is minimized as a result of each edge of the tree maximizing the total mutual information which is nothing but the sum of mutual information between the nodes in all edges of the tree. The algorithm proceeds by first creating a clique <span class="math inline"><em>G</em></span> with the nodes as the variables and the edge weights representing the mutual information for the pair of nodes in that edge. Then it computes the maximum weight spanning tree <span class="math inline"><em>G</em><sub><em>T</em></sub></span> of <span class="math inline"><em>G</em></span> to learn the structure of the tree whereas the parameters, <span class="math inline"><em>T</em>(<em>x</em>, <em>y</em>)</span> (joint probability distributions for each <span class="math inline">(<em>x</em>, <em>y</em>)</span> edge) are equal to <span class="math inline"><em>P</em>(<em>x</em>, <em>y</em>)</span> which is empirical distribution from the data <span class="math inline"><em>d</em></span>. <span class="math inline"><em>G</em><sub><em>T</em></sub></span> is usually learned by using a standard <em>minimum spanning tree</em> algorithm (negating the edge weights) like Prims or Kruskal which take <span class="math inline"><em>O</em>(<em>E</em>log <em>V</em>)</span> time with <span class="math inline">$|E| = \frac{n (n-1)}{2}$</span> for graph <span class="math inline"><em>G</em></span>.</p>
+<p>Computing the entire clique <span class="math inline"><em>G</em></span> also requires first computing <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> mutual information pairs with each pair taking one pass over the data <span class="math inline"><em>d</em></span> giving us a total of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup><em>d</em>)</span> which dominates the total running time of the algorithm. This run time is the best we can do in finding the exact tree structure. In order to reduce it, we need to forgo computing some mutual information pairs which will result in less edge weight computations and hence less edges in the graph (thereby making it less dense).</p>
+<p>It can be seen that since the minimum spanning tree algorithm (mst) depends on the edges in the original graph, a cost reduction can be obtained by starting out with an “incomplete” graph through random sampling methods and then learning an exact mst of the incomplete graph. Another approach would to compute the approximation to mst directly, by building the tree one edge at a time in a greedy manner. In order to make the OR tree structure learning faster, we plan to use only a sample of the data for computing the information gains and then selecting the best attribute for splitting the data set.</p>
+<h2 id="approximation-methods">Approximation Methods</h2>
+<p>We try out two schemes for learning an approximation to the Chow Liu tree along with learning the OR tree with only a fraction of data points. These will be used in cutset network learning algorithm as part of the leaf node computation routine.</p>
+<h3 id="approx-tree-at">Approx Tree (AT)</h3>
+<p>In this method we directly compute a spanning tree of the graph. Since its an approximate method, we are no longer guaranteed to get a minimum spanning tree. We build the tree in <span class="math inline"><em>n</em> − 1</span> steps where at each step we add an edge for the spanning tree and meanwhile also ensuring that all the nodes are covered. We start with a random root node and then select <span class="math inline"><em>K</em></span> neighbors for it randomly. Out of the <span class="math inline"><em>K</em></span> nodes, we pick the node having the highest mutual information with the root and add an edge for them. At the next iteration, we select the root from the nodes in the tree being built and go on in a similar manner until we add <span class="math inline"><em>n</em> − 1</span> edges to get the spanning tree. We maintain the tree structure through a <code>parents</code> array which tracks the parent for each node. At each step of the loop, we spend <span class="math inline"><em>O</em>(<em>d</em><em>K</em>)</span> time in computing the <span class="math inline"><em>K</em></span> mutual information pairs thereby giving us a total running time of <span class="math inline"><em>O</em>(<em>n</em><em>d</em><em>K</em>)</span>. The algorithm pseudo code is shown below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">root <span class="op">=</span> select(nodes, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">tree_nodes.add(root)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">nodes.remove(root)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">edges <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">parent[root] <span class="op">=</span> <span class="dv">-1</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="cf">while</span> edge_count <span class="op">&lt;</span> n<span class="dv">-1</span>:</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">    <span class="cf">if</span> <span class="bu">len</span>(nodes) <span class="op">&lt;=</span> K: </a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">        candidates <span class="op">=</span> nodes  </a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    <span class="cf">else</span>:            </a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">        candidates <span class="op">=</span> select(nodes, K)</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">    best_node <span class="op">=</span> BestNode(root, candidates)                        </a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">    tree_nodes.add(best_node)</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">    nodes.remove(best_node)</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">    parent[best_node] <span class="op">=</span> curr_node</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">    edge_count <span class="op">+=</span> <span class="dv">1</span>            </a>
+<a class="sourceLine" id="cb1-16" data-line-number="16">    curr_node <span class="op">=</span> select(tree_nodes, <span class="dv">1</span>)</a></code></pre></div>
+<h3 id="approx-graph-ag">Approx Graph (AG)</h3>
+<p>The Chow Liu algorithm uses a complete graph between the <span class="math inline"><em>n</em></span> variables. Instead of computing all <span class="math inline"><em>n</em><sup>2</sup></span> edges, we create an incomplete graph by not computing all the mutual information pairs. This is motivated by the random edge sampling method as described in [5]. Random edge sampling directly samples <span class="math inline"><em>K</em></span> edges (as <span class="math inline"><em>K</em></span> node pairs) and uses this as an approximation to graph <span class="math inline"><em>G</em></span>. However, there is a chance of having isolated nodes in the graph making is disconnected (which would make the mst a forest!). In order to avoid this, we construct the graph in a step wise manner by building up a sort-of-dense tree in a similar as seen in previous section. However, we do not throw away any edges and keep all <span class="math inline"><em>K</em></span> of them for each iteration and we also stop the iterations once we have completed <span class="math inline"><em>n</em></span> steps. After computing the graph, we feed it to an exact mst algorithm to get the desired tree. At each step we spend <span class="math inline"><em>O</em>(<em>d</em><em>K</em>)</span> time for the mutual information pairs and the loop runs for <span class="math inline"><em>n</em></span> steps, with each step adding <span class="math inline"><em>K</em></span> edges to the graph giving us total of <span class="math inline"><em>n</em><em>K</em></span> edges. Here too the running time is <span class="math inline"><em>O</em>(<em>n</em><em>d</em><em>K</em>)</span> since <span class="math inline"><em>d</em></span> dominates the log term in mst calculation. The algorithm pseudo code is shown below:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">curr_node <span class="op">=</span> select(nodes, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">graph_nodes.add(curr_node)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">steps <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">flag <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="cf">while</span> nodes <span class="kw">or</span> steps <span class="op">&lt;</span> nvars<span class="dv">-1</span>:</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="cf">if</span> flag <span class="op">==</span> <span class="dv">1</span>:        </a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">        candidates <span class="op">=</span>  select(graph_nodes, K)            </a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">    <span class="cf">elif</span> <span class="bu">len</span>(nodes) <span class="op">&lt;=</span> samp_k:    <span class="co"># Stop sampling!</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">        candidates <span class="op">=</span> nodes  </a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    <span class="cf">else</span>:            </a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">        candidates <span class="op">=</span> select(nodes, K)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">    <span class="cf">for</span> e <span class="kw">in</span> candidates:</a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">        score <span class="op">=</span> MutualInfo(curr_node, e)</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">        adjmat[curr_node, e] <span class="op">=</span> score</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">        adjmat[e, curr_node] <span class="op">=</span> score</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18">    <span class="cf">if</span> flag <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb2-19" data-line-number="19">        graph_nodes.add(candidates)</a>
+<a class="sourceLine" id="cb2-20" data-line-number="20">        nodes <span class="op">=</span> nodes <span class="op">\</span> candidates</a>
+<a class="sourceLine" id="cb2-21" data-line-number="21">    <span class="cf">if</span> nodes.empty():</a>
+<a class="sourceLine" id="cb2-22" data-line-number="22">        flag <span class="op">=</span> <span class="dv">1</span>                </a>
+<a class="sourceLine" id="cb2-23" data-line-number="23">    steps <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-24" data-line-number="24">    curr_node <span class="op">=</span> select(graph_nodes, <span class="dv">1</span>)</a></code></pre></div>
+<h2 id="experimental-evaluation">Experimental Evaluation</h2>
+<p>We evaluated our algorithms on nine binary valued data sets as seen in the two tables below. There is wide range for both <span class="math inline"><em>n</em></span> and <span class="math inline"><em>d</em></span> across all the data sets and hence they are representative enough and potentially give us an insight into different use cases. The evaluation metrics were the test set log likelihood and the running time for training the model and 10 repeated runs were used to compute these values and their average is reported. For all algorithms we used 1-Laplace smoothing to avoid numerical errors and tuned the fraction <span class="math inline"><em>f</em></span> (for OR tree learning) using the validation data. The fraction values considered were: <code>[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]</code>. Note that <span class="math inline"><em>K</em></span> is not necessarily a good hyper parameter here since we expect the model runtime to go up as <span class="math inline"><em>K</em></span> approaches <span class="math inline"><em>n</em></span> and asymptotically the runtimes match if <span class="math inline"><em>K</em> = <em>n</em></span>. Therefore we set its value as the ceiling of <span class="math inline"><em>K</em> = log <em>n</em></span>, which results in the runtimes being sub-quadratic in <span class="math inline"><em>n</em></span>. We ran a preliminary experiment on the <code>plants</code> dataset to see the effect of different <span class="math inline"><em>K</em></span> values and data sampling fractions on the algorithm runtime and validation data log likelihood. The model for trying out the different <span class="math inline"><em>K</em></span> values was just the Approx Tree i.e not used as a part of cutset network.</p>
+<p><img src="./frac_cnet_plantsa_1_RunTime.jpg" alt="image" style="width:50.0%" /> <img src="./frac_cnet_plantsa_1_ValLL.jpg" alt="image" style="width:50.0%" /></p>
+<p><img src="./Kval_cltree_plantsa_2_RunTime.jpg" alt="image" style="width:50.0%" /> <img src="./Kval_cltree_plantsa_2_ValLL.jpg" alt="image" style="width:50.0%" /></p>
+<h3 id="baselines">Baselines</h3>
+<p>The baseline experiments were the standard chowliu tree and cutset networks along with independent bayesian networks which acted as a sanity check for our approximation methods (and also like a crude but acceptable lower bound). Our hypothesis was that the approximation methods should have better run time while suffering a slight drop in test set log likelihood performance.</p>
+<h2 id="results">Results</h2>
+<p>The run times (in seconds) for the different methods for each data set are presented in Table-1 while the test set log-likelihoods are shown in Table-2. For each data set, the bold entries indicates the lowest value for the running time and the highest value for test set log-likelihood in tables 1 and 2 respectively. Independent Bayesian Networks were omitted from the run time table since the values are often very close to zero and do not help much in the analysis. The codes used in the tables for the different experiment names are as follows:</p>
+<ul>
+<li>IndepBN: Independent Bayesian Networks</li>
+<li>CLTree: Chow Liu Tree alogorithm</li>
+<li>CNet: Cutset network (no pruning)</li>
+<li>fCnet + AT: Cutset network (with sampling for OR tree) + Approx Tree method</li>
+<li>fCnet + AG: Cutset network (with sampling for OR tree) + Approx Graph method</li>
+</ul>
+<table>
+<caption>Runtime for the algorithms across all the datasets (in seconds)</caption>
+<thead>
+<tr class="header">
+<th><strong>Dataset</strong></th>
+<th><strong># Var</strong></th>
+<th><strong># Trn</strong></th>
+<th><strong>CLTree</strong></th>
+<th><strong>CNet</strong></th>
+<th><strong>fCnet + AT</strong></th>
+<th><strong>fCnet + AG</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>nltcs</td>
+<td>16</td>
+<td>16181</td>
+<td><strong>0.03952</strong></td>
+<td>0.17773</td>
+<td>0.04354</td>
+<td>0.05741</td>
+</tr>
+<tr class="even">
+<td>msnbc</td>
+<td>17</td>
+<td>291326</td>
+<td>0.78711</td>
+<td>2.59293</td>
+<td><strong>0.37496</strong></td>
+<td>0.39212</td>
+</tr>
+<tr class="odd">
+<td>plants</td>
+<td>69</td>
+<td>17412</td>
+<td>0.29355</td>
+<td>2.14429</td>
+<td><strong>0.18305</strong></td>
+<td>0.24551</td>
+</tr>
+<tr class="even">
+<td>jester</td>
+<td>100</td>
+<td>9000</td>
+<td><strong>0.29244</strong></td>
+<td>1.92556</td>
+<td>0.31162</td>
+<td>0.40367</td>
+</tr>
+<tr class="odd">
+<td>audio</td>
+<td>100</td>
+<td>15000</td>
+<td>0.48968</td>
+<td>3.51331</td>
+<td><strong>0.39658</strong></td>
+<td>0.49917</td>
+</tr>
+<tr class="even">
+<td>netflix</td>
+<td>100</td>
+<td>15000</td>
+<td><strong>0.48851</strong></td>
+<td>3.61621</td>
+<td>0.52049</td>
+<td>0.56322</td>
+</tr>
+<tr class="odd">
+<td>accidents</td>
+<td>111</td>
+<td>12758</td>
+<td><strong>0.50744</strong></td>
+<td>4.63285</td>
+<td>0.71558</td>
+<td><em>8.70181</em></td>
+</tr>
+<tr class="even">
+<td>dna</td>
+<td>180</td>
+<td>1600</td>
+<td><strong>0.15916</strong></td>
+<td>1.01499</td>
+<td>0.37915</td>
+<td>0.54568</td>
+</tr>
+<tr class="odd">
+<td>reuters52</td>
+<td>889</td>
+<td>6532</td>
+<td>17.6617</td>
+<td>225.748</td>
+<td><strong>4.51495</strong></td>
+<td>6.40184</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Test set log-likelihoods for the algorithms across all the datasets</caption>
+<thead>
+<tr class="header">
+<th><strong>Dataset</strong></th>
+<th><strong>IndepBN</strong></th>
+<th><strong>CLTree</strong></th>
+<th><strong>CNet</strong></th>
+<th><strong>fCnet + AT</strong></th>
+<th><strong>fCnet + AG</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>nltcs</td>
+<td>-9.23362</td>
+<td>-6.75904</td>
+<td>-5.91823</td>
+<td>-5.55817</td>
+<td><strong>-5.44865</strong></td>
+</tr>
+<tr class="even">
+<td>msnbc</td>
+<td>-6.77014</td>
+<td>-6.54012</td>
+<td>-6.12911</td>
+<td><strong>-4.75659</strong></td>
+<td>-5.10283</td>
+</tr>
+<tr class="odd">
+<td>plants</td>
+<td>-31.2662</td>
+<td>-16.5241</td>
+<td>-13.4008</td>
+<td><strong>-9.68081</strong></td>
+<td>-10.5392</td>
+</tr>
+<tr class="even">
+<td>jester</td>
+<td>-63.8834</td>
+<td>-58.2265</td>
+<td>-58.1917</td>
+<td>-49.9633</td>
+<td><strong>-49.5859</strong></td>
+</tr>
+<tr class="odd">
+<td>audio</td>
+<td>-49.3368</td>
+<td>-44.3749</td>
+<td>-43.9848</td>
+<td><strong>-37.2985</strong></td>
+<td>-37.7936</td>
+</tr>
+<tr class="even">
+<td>netflix</td>
+<td>-64.5614</td>
+<td>-60.2503</td>
+<td>-62.4992</td>
+<td><strong>-50.8655</strong></td>
+<td>-51.0449</td>
+</tr>
+<tr class="odd">
+<td>accidents</td>
+<td>-45.5596</td>
+<td>-33.1881</td>
+<td><strong>-31.9951</strong></td>
+<td>-33.6356</td>
+<td>-32.8759</td>
+</tr>
+<tr class="even">
+<td>dna</td>
+<td>-100.386</td>
+<td>-87.7347</td>
+<td>-96.6158</td>
+<td><strong>-78.8981</strong></td>
+<td>-80.8926</td>
+</tr>
+<tr class="odd">
+<td>reuters52</td>
+<td>-112.626</td>
+<td>-97.5372</td>
+<td>-92.8065</td>
+<td><strong>-42.3804</strong></td>
+<td>-48.6373</td>
+</tr>
+</tbody>
+</table>
+<h3 id="algorithm-learning-time">Algorithm Learning Time</h3>
+<p>As expected the standard Chow-Liu tree algorithm is the fastest for five out of the nine datasets. The approximation methods on cutset networks (fCnet + AT, AG) too show a big drop in runtime (compared to CNet) with sometimes even being the astest method for a particular dataset with the drop being more evident on larger datasets like <code>reuters52</code>. The AT method is naturally faster amongst the two approx methods since it computes the spanning tree on the fly whereas AG computes a mst from an less dense graph – involving more edge calculations and tree structure learning. The sampling of data for OR tree might also helping the two approx methods since the calculation of information gain is prohibitive cost in the overall running time. An anomolaous result is the running time for fCnet + AG with the <code>accidents</code> data. Its runtime is higher than other algorithms by a large magnitude and may be due to a bug in runtime calculation while the program was running!</p>
+<h3 id="algorithm-predictive-performance">Algorithm Predictive Performance</h3>
+<p>The predictive performance of the approximation method (measured through their log likelihood scores) comes out quite well, sometimes even being the best of all! This is was not entirely expected since a worse result than CNet with a slightly better run time was expected. Here too AT is the winner among the 5 methods for majority of the data sets. This might be due to higher ability for generalization (and consequently lower overfitting) from the inherent randomization in the model which helps pick out pairs which might have never been picked for the tree edges when considering all the <span class="math inline"><em>n</em><sup>2</sup></span> pairs and selecting only the high scoring ones. This is also clear from the preliminary experiments (earlier figures) where increasing <span class="math inline"><em>K</em></span> does not necessarily lead to better performance on validation data as it might be leading to overfitting. Even when AT and AG methods don’t stand out as the clear winners (eg. for <code>accidents</code> data), their performance is quite close to the overall best performer.</p>
+<h2 id="discussion">Discussion</h2>
+<p>We introduced 2 approximation schemes and analyzed their running time and log likelihood (predictive) performance on nine binary data sets. The results seem to have followed our hypotheses of the gain in running time. A pleasant surprise was the superior performance in test set log likelihoods across majority of the datasets. Scaling the learning process by making it sub-quadratic or even linear time is an important step in making these models suit to bigger and diverse datasets.</p>
+<p>The current approximation schemes are randomized methods at heart and hence future work includes integrating them into a mixture setting and performing pruning on the trees to perhaps learn even better models. The approximation methods can further be modified based on sparsity assumptions in the data as seen in [3] or through different sampling heuristics [4]. One can even adopt a more aggressive approximation scheme but the order <span class="math inline"><em>d</em></span> term (from computing the mutual information between any pair of variables) largely cancels out any gains from computing the minimum spanning via a fast method pointing towards the need to approximate the mutual information for each variable pair.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p>Chow, C., and Cong Liu. “Approximating discrete probability distributions with dependence trees.” IEEE transactions on Information Theory 14.3 (1968): 462-467.</p></li>
+<li><p>Rahman et al, “Cutset Networks: A Simple, Tractable, and Scalable Approach for Improving the Accuracy of Chow-Liu Trees”, ECMLPKDD, 2014.</p></li>
+<li><p>Meil et al, “An accelerated Chow and Liu algorithm: fitting tree distributions to high-dimensional sparse data”, ICML, 1999.</p></li>
+<li><p>Poon, Hoifung, and Pedro Domingos. “Sum-product networks: A new deep architecture.” 2011 IEEE International Conference on Computer Vision Workshops (ICCV Workshops). IEEE, 2011.</p></li>
+<li><p>Ammar, Sourour, et al. “Sub-quadratic Markov tree mixture learning based on randomizations of the Chow-Liu algorithm.” ,PGM, 2010.</p></li>
+<li><p>Mauro et al, “Multi Label Classification with Cutset Networks”, PGM, 2016.</p></li>
+<li><p>Rahman et al, “Learning Ensembles of Cutset Networks,” AAAI 20 16.</p></li>
+</ol>
+</body>
+</html>

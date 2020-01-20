@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<!-- CUSTOM CSS FILE-->
+<link rel="stylesheet" href="/home/ninad/.pandoc/pandoc.css" type="text/css" />
+  <title>todo</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+  <style>
+  /* Custom CSS file for use with pandoc */
+  
+  body {      
+        width:52%;
+        margin:0 auto;
+        padding: 0px;
+        background-color: #FEFEFE;
+        font-size:16px;
+        font-family: "DejaVu Sans", Arial, sans-serif;
+        color: #111;
+        line-height:1.4; }
+  
+  hr {
+      display: block;
+      position: relative;
+      padding: 0;
+      margin: 8px auto;
+      height: 0;
+      width:100%;
+      max-height: 0;
+      font-size: 1px;
+      line-height: 0;
+      clear: both;
+      border: none;
+      border-top: 1px solid #cccccc; }
+        
+  h1,h2,h3,h4,h5,h6 {
+      font-family: Georgia, Palatino, 'Times New Roman', times, serif;
+      line-height: 1.2;
+      margin-top: 1.5em;
+      font-weight: bold;
+      color: #555; }
+        
+  h1 {  font-size: 1.8em; }
+  h2 {  font-size: 1.6em; }
+  h3 {  font-size: 1.4em; }
+  h4 {  font-size: 1.2em; }
+  h5 {  font-size: 1.0em; }
+  h6 {  font-size: 0.8em; }
+  
+  small, sub, sup {  font-size: 75%; }
+  
+  
+  a {	text-decoration: none;
+      color:#255db8; }
+  a:hover {	text-decoration: underline; }
+  a:visited {	color:#255db8; }
+  
+  ul {  padding-left: 1.4em; }
+  li {  margin-bottom: 0.4em; }
+  
+  
+  figcaption {    display:none; }
+  
+  figure { 
+      display: block; 
+      margin:0;
+      page-break-inside:avoid; }
+  
+  img { 
+      height:200px;
+      margin-right: 20px;
+      padding-left: 0.2em; }
+  
+  
+  blockquote {  
+    color: #666666;
+    font-style: italic;
+    margin-left: 1.5em;
+    padding-left: 1em;
+    border-left: 3px solid #2c8898; }
+  
+  /* Pre and Code */
+  pre {
+      background-color: #FAFAFA;
+      display: block;
+      padding: 1em;
+      overflow-x: auto; }
+  
+  code {
+      background-color: #FAFAFA;
+      font-size: 0.95em;
+      font-family: monospace, serif;
+      padding: 0 0.5em;
+      white-space: pre-wrap; }
+  
+  pre > code {
+      padding: 0;
+      background-color: transparent;
+      white-space: pre; }
+  
+  
+  /* Tables */
+  table {
+    text-align: justify;
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 10px;}
+    
+  
+  td, th {
+    padding: 0.5em;
+    border-bottom: 1px solid #f1f1f1; }
+  
+  #TOC {
+      font-size: 10pt;
+      position: fixed;
+      right: 0em;
+      top: 0em;
+      padding-right: 1.2em;
+      background: #fefefe;
+      line-height: 12pt;
+      text-align: right;
+      box-shadow: 0 0 1em #777777;
+      -webkit-box-shadow: 0 0 1em #777777;
+      -moz-box-shadow: 0 0 1em #777777;
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      /* ensure doesn't flow off the screen when expanded */
+      max-height: 80%;
+      overflow: auto; }
+      
+      
+      
+  @media only screen and (min-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      filter: none !important;
+      -ms-filter: none !important;
+    }
+  
+    body {
+      font-size: 12pt;
+      max-width: 100%;
+    }
+  
+    a, a:visited {
+      text-decoration: underline;
+    }
+  
+    hr {
+      height: 1px;
+      border: 0;
+      border-bottom: 1px solid black;
+    }
+  
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+  
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+      content: "";
+    }
+  
+    pre, blockquote {
+      border: 1px solid #999;
+      padding-right: 1em;
+      page-break-inside: avoid;
+    }
+  
+    tr, img {
+      page-break-inside: avoid;
+    }
+  
+    img {
+      max-width: 100% !important;
+    }
+  
+    @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+  }
+  
+    @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+  }
+  
+    p, h2, h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2, h3 {
+      page-break-after: avoid;
+    }
+  }
+  
+  </style>
+</head>
+<body>
+<h1 id="ml-project-todo">ML Project TODO</h1>
+<ul>
+<li>Prepare proposal and think how to tackle the problems at hand</li>
+<li>Discuss the proposal with prof either in office hours or directly on piazza</li>
+<li>Start coding and working! Make 3 day progress reports!</li>
+</ul>
+<p>This document will act as sort of a notes for my entire project from which I can very easily write the report.</p>
+<p><strong>Idea-1:</strong> The Chow-Liu algorithm scales quadratically with the number of attributes/variables. Develop an approximate version of the Chow-Liu algorithm so that it scales linearly with the number of attributes and examples. Use this algorithm to learn cutset networks and their mixtures and compare the performance with the conventional cutset networks learning algorithm both in terms of time and test-set log likelihood score.</p>
+<p><strong>Idea-2:</strong> Develop learning algorithms so that cutset networks can be used for solving multi-label classification problems. Use the IJCAI 2019 paper described above as a reference. Compare with the Mauro’16 paper (dcsn) for multi label approach.</p>
+<p>Can also compare the performance of the methods in project to the simple methods discussed in class (these can act as the baselines).</p>
+<h2 id="nov-5-office-hours">Nov 5 office hours</h2>
+<h3 id="questions">Questions</h3>
+<ul>
+<li><p>Discuss the approximation scheme for a fast approximation to CLtree learning. Main bottleneck is the quadratic number of mutual info pairs that need to be evaluated. Meil ’99 proposes a method (under sparsity assumptions) to reduce this cost by leveraging the individual counts of each binary variable.</p>
+<ul>
+<li><p>We can go about it from two ways: Either first compute a &quot;close enough graph to the original clique, and then apply a mst algorithm on it..Or can use an approx algorithm for mst.</p></li>
+<li><p>Compute the approx to mst on the fly using some greedy strategy so that it results in a spanning tree (which may not be maximal). This can also be seen as a regularization? As we are not closely depending on the exact and all mutual information pairs.</p></li>
+</ul></li>
+<li><p>Need the code for Cnet learning (c++/python) or can use the Python code used in Mauro’16 multilabel paper – available on github.</p></li>
+<li><p>For the multi-label problem, there is already a paper (Mauro’16) so is the suggestion to extend that? Any pointers towards it? Can combine it with the fast CLtree heuristic that will (hopefully) be developed? Can later even work on this combination? Ans: The paper does some heuristics but the IJCAI’19 paper shows a way to directly model the <span class="math inline"><em>P</em>(<em>Y</em>|<em>X</em>)</span> using the conditional cutset network from which we can just obtain a argmax for obtaining <span class="math inline"><em>Y</em></span> given an input <span class="math inline"><em>X</em></span>.</p></li>
+</ul>
+<h3 id="discussion">Discussion</h3>
+<p>For faster learning of CLtree it should ideally be always be worse than (sanity check) learning an exact CLtree since we will be applying heuristic methods to make it faster. We can use similar heuristics for internal splitting of the nodes in the rooted OR tree to reduce its time complexity too. If the sanity check fails, it might indicate that the test data is probably from a different distribution.</p>
+<p>Sampling based approach to reduce the <span class="math inline"><em>d</em></span> term in the overall time complexity since that can sometimes overpower the <span class="math inline"><em>n</em><sup>2</sup></span> term. Only see from a subset of data?</p>
+<p><strong>Heuristic-1</strong> to construct the spanning tree, select any node at random <span class="math inline"><em>r</em></span> and look at any <span class="math inline"><em>k</em></span> other nodes and estimate the counts needed for computing the mutual info. Then using some strategy extend the tree one node at a time, hence this algorithm will run for only <span class="math inline"><em>n</em></span> iterations (mst has <span class="math inline"><em>n</em></span> nodes). For each of the <span class="math inline"><em>k</em></span> nodes, get the count distribution i.e how many times was it 1 or 0, similarly for the current node. Compare amongst and select a node from the k-available nodes. For two variables <span class="math inline"><em>X</em>1</span> (dist of <span class="math inline"><em>r</em></span>) and <span class="math inline"><em>X</em>2</span> we are using <span class="math inline"><em>P</em>(<em>X</em>1)</span> and <span class="math inline"><em>P</em>(<em>X</em>2)</span> (comparing them) to see which edge to add to <span class="math inline"><em>r</em></span>.</p>
+<p>Thought 1: Instead of selection a node at random, why not select the one with highest count? According to meila paper, this may have some correlation with higher mutual information.</p>
+<p>Thought 2: Focus on the base problem of approximation mutual information using just the count data of the variables.</p>
+<p>Email/ask Prof. Daescu about this heuristic. Explain to him the problem setting and your proposed approach. What seems reasonable/not-so-reasonable to him and also any other suggestions?</p>
+<p><strong>Code repositories</strong> to dive into:</p>
+<ul>
+<li><a href="https://github.com/nicoladimauro/dcsn">mauro dcsn (python)</a></li>
+<li><a href="https://github.com/ShashaJ/CNxD">shashaJ cnxd (python)</a></li>
+<li>Email prof for obtaining the C++ code.</li>
+</ul>
+<h2 id="datasets">Datasets</h2>
+<p>Use the homework-4 datasets – small enough for a project but representative enough. Will also have other baselines to compare against the proposed model. Can also try to model using some other probabilistic technique (for comparing the log likelihoods).</p>
+<p>All of them are a subset of the datasets used in the paper, so it seems like a fair comparison. So this part is done! – Can always try out other schemes later on.</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>Write down the machine specs, and the code type and packages used. Use a numpy random seed for reproducible results.</p>
+<ol type="1">
+<li>Test set average log likelihoods (i.e per data point)</li>
+<li>Running time of the algorithms – for training + pruning (if any) – use recommended python modules</li>
+</ol>
+<h2 id="baselines-and-experiments">Baselines and Experiments</h2>
+<p>Simple ones: Indep Bayesian networks, Chow Liu Trees, Forest CLtree mixtures (simple and fast to compute) Compare the approximate scheme by just running it for a CLtree with a normal CLtree i.e not using the cutset network – not a priority since the focus should be on improving Cnets.</p>
+<p>Normal Cutset networks and CNets with Post pruning as described in the paper. Cnets + CnetsP using the approximation scheme – Plus if possible, approximate versions of CLtrees. Existing results from the paper (or Re-run the experiments again). Mixture based results take a long time to run, so need to keep that in mind – introduce convergence criteria or ignore mixtures for now.</p>
+<p>Little bit slower: Cutset networks, EM CLtree mixtures, EM Cutset mixtures (but our main goal is to compare the performance of the heuristic against a single cutset network - - so NOT trying out many mixture models is okay. If trying out mixtures, check for convergence criteria. Not using them would be a better idea since they have built in randomization – will then need to average out the results by reporting the mean and std values.</p>
+<ul>
+<li>Indep Bnets, CLtrees, approx-CLtrees.</li>
+<li>Cnets, CnetsP i.e no approx.</li>
+<li>app-Cnet + true-CLtree</li>
+<li>app-Cnet + app-CLtree</li>
+<li>true-Cnet + app-CLtree</li>
+<li>Mixtures (if time permits)? – or hard EM threshold and checking for convergence</li>
+</ul>
+<p><strong>Others:</strong></p>
+<ul>
+<li><p>Exploratory data analysis for all the data sets – maybe important for conclusions etc.. Comparing the distributions of train, val data sets (test data only for final reporting).</p></li>
+<li><p>Graphs for training time vs accuracy? Logging the run time of the experiments.</p></li>
+<li><p>Track the Eval LL across various time intervals for all exps – plot it out!</p></li>
+<li><p>Time take to evaluate the results too (computing log-likelihoods, probability of a single input data point). Store the trained model files as pickle objects to do this analysis later on too.</p></li>
+</ul>
+<h2 id="code">Code</h2>
+<p>Folders: docs, data, src, results, notebooks. Notebooks for initial data exploration and stats code Results to save the eval metrics in a txt file. Can also store the trained models here in pickled format here. Document the functions used properly! Reference code in data folder.</p>
+<p><strong>Figures and Tables:</strong></p>
+<ul>
+<li>Figures Eval LL vs Run time during traing for various exps and datasets.</li>
+<li>Run time for single data point eval / test LL various exps on same data</li>
+<li>Table: Run time for all exps across all data</li>
+<li>Table: Test LL for all exps across all data</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<p>Have to pin point the approximation scheme required to avoid the large quadratic penalty for going over the mutual info pairs to construct the CNet – similar to a randomized network?</p>
+<p>Aim for at least 2-3 different approx schemes: 1 for CLtree, 1 for ORtree, and 1 something different. Try to think about as many ideas possible – good and motivated approximations schemes. Need to show a good motivation for an proposed method – should not be any random scheme? Or is it???</p>
+<h2 id="todo-nov-30">Todo Nov 30</h2>
+<ul>
+<li>Getting indep, cltree, cnet, cnetP baselines working atleast some datasets</li>
+<li>Getting the entire pipeline ready</li>
+<li>Getting exploration notebooks ready</li>
+<li>Getting timing of experiments down to a tee.</li>
+<li>Getting experiment design ready.</li>
+<li>Getting started with the project report!</li>
+<li>Think</li>
+</ul>
+</body>
+</html>
