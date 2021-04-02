@@ -199,3 +199,7 @@ class CLTree(object):
                 denom = self.prob_sing[par, val_par]
                 lprob += np.log(num / denom)
         return lprob
+
+if __name__ == "__main__":
+    # Run tests
+    pass

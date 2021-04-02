@@ -10,7 +10,6 @@ from indep_bnet import IndepBnet
 from cl_tree import CLTree
 from cutset_net import CutsetNet
 
-
 parser = argparse.ArgumentParser(description='Fit a desired model and output the test data metrics')
 
 parser.add_argument("-p", "--dirpath", required=False,  type=str, default='../data/',
